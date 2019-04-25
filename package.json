@@ -8,23 +8,11 @@
   },
   "scripts": {
     "build": "tsc",
-    "pretest": "npm run lint",
     "test": "jest",
     "cover": "npm test -- --collect-coverage",
     "coveralls": "npm run cover -- --coverage-reporters=text-lcov | coveralls",
     "lint": "tslint ./src/**.ts",
     "clean": "shx rm -rf $npm_package_directories_lib"
-  },
-  "nyc": {
-    "include": [
-      "src"
-    ],
-    "exclude": [
-      "src/**/*.spec.ts"
-    ],
-    "extension": [
-      ".ts"
-    ]
   },
   "author": "Spencer Brower",
   "license": "GPL-3.0+",
@@ -33,6 +21,7 @@
     "@types/node": "^11.13.7",
     "coveralls": "^3.0.3",
     "jest": "^24.7.1",
+    "rewire": "^4.0.1",
     "shx": "^0.3.2",
     "tslint": "^5.16.0",
     "typescript": "^3.4.5"

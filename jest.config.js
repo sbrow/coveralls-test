@@ -79,7 +79,7 @@ module.exports = {
   // moduleNameMapper: {},
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
-  modulePathIgnorePatterns: ["src"],
+  // modulePathIgnorePatterns: ["src"],
 
   // Activates notifications for test results
   // notify: false,
@@ -109,7 +109,7 @@ module.exports = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  // rootDir: null,
+  rootDir: "dist",
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
