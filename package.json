@@ -8,12 +8,12 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "ts-mocha ./src/test/test.spec.ts",
-    "cover": "nyc npm test",
-    "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "cover": "npm test -- --collect-coverage",
+    "coveralls": "npm run cover -- --coverage-reporters=text-lcov | coveralls",
     "lint": "tslint ./src/**.ts",
-    "clean": "shx rm -rf $npm_package_directories_lib",
-    "pretest": "npm run lint"
+    "clean": "shx rm -rf $npm_package_directories_lib"
   },
   "nyc": {
     "include": [
@@ -29,14 +29,11 @@
   "author": "Spencer Brower",
   "license": "GPL-3.0+",
   "devDependencies": {
-    "@types/mocha": "^5.2.6",
+    "@types/jest": "^24.0.11",
     "@types/node": "^11.13.7",
-    "assert": "^1.4.1",
     "coveralls": "^3.0.3",
-    "mocha": "^6.1.4",
-    "nyc": "^14.0.0",
+    "jest": "^24.7.1",
     "shx": "^0.3.2",
-    "ts-mocha": "^6.0.0",
     "tslint": "^5.16.0",
     "typescript": "^3.4.5"
   }
