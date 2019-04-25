@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "inlineSourceMap": true,
+        "outDir": "dist"
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "coveralls-test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "./dist"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-mocha ./src/test/test.spec.ts",
+    "cover": "nyc npm test",
+    "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
+    "lint": "tslint ./src/**.ts",
+    "clean": "shx rm -rf $npm_package_directories_lib",
+    "pretest": "npm run lint"
+  },
+  "nyc": {
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "src/**/*.spec.ts"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "author": "Spencer Brower",
+  "license": "GPL-3.0+",
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.7",
+    "assert": "^1.4.1",
+    "coveralls": "^3.0.3",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0",
+    "shx": "^0.3.2",
+    "ts-mocha": "^6.0.0",
+    "typescript": "^3.4.5"
+  }
+}
